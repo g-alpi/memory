@@ -28,7 +28,7 @@ function voltearCarta(id) {
 	if (contCartas==2) {
 		
 		compararCartas(cartasEmparejadas);
-		setTimeout(borrarLista,2010)
+		
 		
 	}    
 }
@@ -38,11 +38,13 @@ function compararCartas(cartas){
 	if(cartas[0].substring(0,cartas[0].length-1) == cartas[1].substring(0,cartas[1].length-1)){
 		for (var i = 0; i < cartas.length; i++) {
 			document.getElementById(cartas[i]).name = "emparejada";
+			borrarLista();
 		}
 	}
 	else{
 		
 		setTimeout(girarCartas,2000);
+		setTimeout(borrarLista,2010)
 	}	
 }
 
