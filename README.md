@@ -10,5 +10,8 @@ En caso de estar utilizando apache realizaremos las siguientes acciones:
 -En algunos casos hay que introducir "http://localhost:1024/memory.php"(1024=puerto php).
 
 En caso de estar utilizando Xampp debemos realizar las siguientes acciones:
--Ubicar el archivo descargado en la carpeta htdocs.
+-Ubicar el archivo descargado en la carpeta xampp/htdocs.
 -Abrimos un navegador e introducimos "localhost/memory/memory.php".
+
+
+Para el completo funcionamiento del juego se recomienda no modificar ninguno de los archivos descargados des de git hub.
