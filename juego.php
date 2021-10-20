@@ -48,7 +48,7 @@
     <div id="flex">
         <div></div>
         <h1>Memory</h1>
-        <div><h3 id="contador"></h3></div>
+        <div><h3 id="contador">Intentos: 0</h3></div>
     </div>
     <div id="flexbox">
 
