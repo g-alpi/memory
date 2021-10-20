@@ -32,8 +32,6 @@
     	$cantidadFotos= [0,0,0,0];
 
     	echo $cantidadFotos2[0];
-
-    	$bandera=true;
     	$contador=0;
     	
     	
