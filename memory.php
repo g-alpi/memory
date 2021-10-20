@@ -21,7 +21,7 @@
 			border-color: #613659;
 			border-radius: 3px;
 		}
-		a{
+		a {
 			text-decoration: none;
 			color: inherit;
 			margin-top: 4%;

@@ -14,6 +14,13 @@
         h1{
             text-align: center;
         }
+        div#flex{
+            display: flex;
+        }
+        div#flex div{
+            width: 45%;
+            content: ;
+        }
         div#flexbox{
             display: flex;
             flex-wrap: wrap;
@@ -30,12 +37,20 @@
             margin: 3px;
 
         }
+        h3#contador{
+            float: right;
+            padding-right: 10%;
+        }
     </style>
 </head>
 <body>
 	<script type="text/javascript" src="juego.js"></script>
-    <h1>Memory</h1>
-    <div id=flexbox>
+    <div id="flex">
+        <div></div>
+        <h1>Memory</h1>
+        <div><h3 id="contador"></h3></div>
+    </div>
+    <div id="flexbox">
 
         <?php 
         
@@ -43,9 +58,7 @@
       
     	$cantidadFotos= [0,0,0,0];
 
-    	echo $cantidadFotos2[0];
 
-    	$bandera=true;
     	$contador=0;
     	
     	
@@ -89,7 +102,6 @@
 
         ?>
             
-        <p id="test"></p>
         
         
     </div>

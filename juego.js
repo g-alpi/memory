@@ -1,55 +1,69 @@
 
 var cartasEmparejadas=[];
 var contCartas = 0;
+var intentos = 0;
 function voltearCarta(id) {
 	contCartas++;
+	console.log(contCartas);
+	if (contCartas<=2) {
+		if(id.substring(0,id.length-1) == "thechariot"){
+	        document.getElementById(id).src = "imagenes/thechariot.jpg";
+		}
+		else if(id.substring(0,id.length-1) == "thefool"){
+			document.getElementById(id).src = "imagenes/thefool.jpg";
+		}
+		else if(id.substring(0,id.length-1) == "thehermit"){
+			document.getElementById(id).src = "imagenes/thehermit.jpg";
+		}
+		else if(id.substring(0,id.length-1) == "theTower"){
+			document.getElementById(id).src = "imagenes/theTower.jpeg";
+		}
 
-
+	}
 		
-	if(id.substring(0,id.length-1) == "thechariot"){
-        document.getElementById(id).src = "imagenes/thechariot.jpg";
-	}
-	else if(id.substring(0,id.length-1) == "thefool"){
-		document.getElementById(id).src = "imagenes/thefool.jpg";
-	}
-	else if(id.substring(0,id.length-1) == "thehermit"){
-		document.getElementById(id).src = "imagenes/thehermit.jpg";
-	}
-	else if(id.substring(0,id.length-1) == "theTower"){
-		document.getElementById(id).src = "imagenes/theTower.jpeg";
-	}
+	
 
 	cartasEmparejadas.push(id);
-	document.getElementById('test').innerHTML=contCartas;
-	if (contCartas==2) {
-		contCartas = 0;
-		compararCartas(cartasEmparejadas);
-		
-	}
 
-    
-    
-    	
-    
+
+	if (contCartas==2) {
+
+		compararCartas(cartasEmparejadas);
+		contarIntentos();
+		
+	}    
 }
+
 function compararCartas(cartas){
-	if(cartas[0].substring(0,cartas[0].length-1) != cartas[1].substring(0,cartas[1].length-1)){
-		setTimeout(girarCartas(cartas),2000);
-	}
-	else{
+	console.log(cartas);
+	if(cartas[0].substring(0,cartas[0].length-1) == cartas[1].substring(0,cartas[1].length-1)){
 		for (var i = 0; i < cartas.length; i++) {
 			document.getElementById(cartas[i]).name = "emparejada";
+			borrarLista();
 		}
+	}
+	else{
 		
-	}
-
-	cartas.splice(0, cartas.length);
-	
+		setTimeout(girarCartas,2000);
+		setTimeout(borrarLista,2010)
+	}	
 }
-function girarCartas(cartas){
-	for (var i = 0; i < cartas.length; i++) {
-		document.getElementById(cartas[i]).src = "imagenes/dorso_tarot.jpg";
+
+
+function girarCartas(){
+	console.log(cartasEmparejadas);
+	for (var i = 0; i < cartasEmparejadas.length; i++) {
+		document.getElementById(cartasEmparejadas[i]).src = "imagenes/dorso_tarot.jpg";
 	}
-	
+		
+}
+
+function borrarLista(){
+	cartasEmparejadas.splice(0, cartasEmparejadas.length);
+	contCartas = 0;
+}
+function contarIntentos(){
+	intentos++;
+	document.getElementById('contador').innerHTML  = "Intentos: "+intentos;
 	
 }
