@@ -4,40 +4,48 @@ var contCartas = 0;
 var intentos = 0;
 var parejas=0;
 function voltearCarta(id) {
-	contCartas++;
-	console.log(contCartas);
-	if (contCartas<=2) {
-		if(id.substring(0,id.length-1) == "thechariot"){
-	        document.getElementById(id).src = "imagenes/thechariot.jpg";
-		}
-		else if(id.substring(0,id.length-1) == "thefool"){
-			document.getElementById(id).src = "imagenes/thefool.jpg";
-		}
-		else if(id.substring(0,id.length-1) == "thehermit"){
-			document.getElementById(id).src = "imagenes/thehermit.jpg";
-		}
-		else if(id.substring(0,id.length-1) == "theTower"){
-			document.getElementById(id).src = "imagenes/theTower.jpeg";
-		}
-
-	}
-		
 	
 
-	cartasEmparejadas.push(id);
+	
+	if (document.getElementById(id).name!='emparejada') {
+		contCartas++;
+		if (contCartas<=2) {
+			if(id.substring(0,id.length-1) == "thechariot"){
+		        document.getElementById(id).src = "imagenes/thechariot.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thefool"){
+				document.getElementById(id).src = "imagenes/thefool.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thehermit"){
+				document.getElementById(id).src = "imagenes/thehermit.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "theTower"){
+				document.getElementById(id).src = "imagenes/theTower.jpeg";
+			}
 
-
-	if (contCartas==2) {
-
-		compararCartas(cartasEmparejadas);
-		contarIntentos();
+		}
+			
 		
-	}    
-	comprobarVictoria();
+
+		cartasEmparejadas.push(id);
+
+
+		if (contCartas==2) {
+
+			compararCartas(cartasEmparejadas);
+			contarIntentos();
+			
+		}    
+		comprobarVictoria();
+	}
+
+
+
+	
 }
 
 function compararCartas(cartas){
-	console.log(cartas);
+
 	if(cartas[0].substring(0,cartas[0].length-1) == cartas[1].substring(0,cartas[1].length-1)){
 		for (var i = 0; i < cartas.length; i++) {
 			document.getElementById(cartas[i]).name = "emparejada";
@@ -55,7 +63,7 @@ function compararCartas(cartas){
 
 
 function girarCartas(){
-	console.log(cartasEmparejadas);
+
 	for (var i = 0; i < cartasEmparejadas.length; i++) {
 		document.getElementById(cartasEmparejadas[i]).src = "imagenes/dorso_tarot.jpg";
 	}

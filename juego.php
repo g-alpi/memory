@@ -74,26 +74,26 @@
     		if ($cantidadFotos[0]<2 && $random==0) {
                 $cantidadFotos[0]++;
     			echo "<img src='$dorso' alt='thechariot' id='thechariot".$cantidadFotos[0].
-                "'onclick='voltearCarta(\"thechariot".$cantidadFotos[0]."\")'>";
+                "'onclick='voltearCarta(\"thechariot".$cantidadFotos[0]."\")' name='reverso'>";
     			$contador++;
                 
     		}
     		elseif ($cantidadFotos[1]<2 && $random==1) {
                 $cantidadFotos[1]++;
     			echo "<img src='$dorso' alt='thefool' id='thefool".$cantidadFotos[1].
-                "'onclick='voltearCarta(\"thefool".$cantidadFotos[1]."\")'>";
+                "'onclick='voltearCarta(\"thefool".$cantidadFotos[1]."\")' name='reverso'>";
     			$contador++;
     		}
     		elseif ($cantidadFotos[2]<2 && $random==2) {
                 $cantidadFotos[2]++;
     			echo "<img src='$dorso' alt='thehermit' id='thehermit".$cantidadFotos[2].
-                "'onclick='voltearCarta(\"thehermit".$cantidadFotos[2]."\")'>";
+                "'onclick='voltearCarta(\"thehermit".$cantidadFotos[2]."\")' name='reverso'>";
     			$contador++;
     		}
     		elseif ($cantidadFotos[3]<2 && $random==3) {
                 $cantidadFotos[3]++;
     			echo "<img src='$dorso' alt='theTower' id='theTower".$cantidadFotos[3].
-                "'onclick='voltearCarta(\"theTower".$cantidadFotos[3]."\")'>";
+                "'onclick='voltearCarta(\"theTower".$cantidadFotos[3]."\")' name='reverso'>";
     			$contador++;
     		}
 		
