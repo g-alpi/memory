@@ -3,6 +3,7 @@ var cartasEmparejadas=[];
 var contCartas = 0;
 var intentos = 0;
 var parejas=0;
+
 function voltearCarta(id) {
 	
 	if (document.getElementById(id).name!='emparejada') {
@@ -81,6 +82,6 @@ function contarIntentos(){
 function comprobarVictoria(){
 
 	if (parejas==4) {
-		alert("Has ganado!!");
+		setTimeout(function(){location.replace("ganador.php?lvl="+0+"&tiempo="+0+"&intentos="+intentos);},2000)
 	}
 }
