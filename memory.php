@@ -17,6 +17,8 @@
 			width: 100px;
 			height: 40px;
 			color: #d9d21a;
+			margin: 10px;
+			margin-top: 30px;
 			background-color: #452947;
 			border-color: #613659;
 			border-radius: 3px;
@@ -24,9 +26,7 @@
 		a {
 			text-decoration: none;
 			color: inherit;
-			margin-top: 4%;
-			margin-left: auto;
-			margin-right: auto;
+			
 		}
 		div#instrucciones{
 			border: 5px solid #613659;
@@ -40,7 +40,13 @@
 		}
 		div.flexbox{
 			display: flex;
+			margin-top: 7px;
 		}
+		div.flexbox div{
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		.titulo{
 			text-align: center;
 		}
@@ -64,7 +70,10 @@
 	<img src="fotoportada.jpeg" alt="foto de portada">
 </div>
 <div class="flexbox">
-	<a href="juego.php"><button>Play</button></a>
+	<div>
+		<a href="juego.php"><button >Play</button></a>
+		<a  href="halloffame.php"><button>Hall of Fame</button></a>
+	</div>
 </div>
 </body>
 </html>
