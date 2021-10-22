@@ -3,9 +3,8 @@ var cartasEmparejadas=[];
 var contCartas = 0;
 var intentos = 0;
 var parejas=0;
-function voltearCarta(id) {
-	
 
+function voltearCarta(id) {
 	
 	if (document.getElementById(id).name!='emparejada') {
 		contCartas++;
@@ -25,10 +24,7 @@ function voltearCarta(id) {
 
 		}
 			
-		
-
 		cartasEmparejadas.push(id);
-
 
 		if (contCartas==2) {
 
@@ -36,6 +32,7 @@ function voltearCarta(id) {
 			contarIntentos();
 			
 		}    
+
 		comprobarVictoria();
 	}
 
@@ -47,10 +44,11 @@ function voltearCarta(id) {
 function compararCartas(cartas){
 
 	if(cartas[0].substring(0,cartas[0].length-1) == cartas[1].substring(0,cartas[1].length-1)){
+
 		for (var i = 0; i < cartas.length; i++) {
-			document.getElementById(cartas[i]).name = "emparejada";
-			
+			document.getElementById(cartas[i]).name = "emparejada";	
 		}
+
 		parejas++;
 		borrarLista();
 	}
@@ -74,14 +72,16 @@ function borrarLista(){
 	cartasEmparejadas.splice(0, cartasEmparejadas.length);
 	contCartas = 0;
 }
+
 function contarIntentos(){
 	intentos++;
 	document.getElementById('contador').innerHTML  = "Intentos: "+intentos;
 	
 }
+
 function comprobarVictoria(){
 
 	if (parejas==4) {
-		alert("Has ganado!!");
+		setTimeout(function(){location.replace("ganador.php?lvl="+0+"&tiempo="+0+"&intentos="+intentos);},2000)
 	}
 }
