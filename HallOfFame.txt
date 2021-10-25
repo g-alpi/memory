@@ -1,4 +1,4 @@
 EDUARDO;0;0;5
 ETORO;0;0;6
 EDUARDO;0;0;5
-
+Alpi;1;25;7
