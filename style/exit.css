@@ -1,16 +1,33 @@
-body{
-    background-color: #211522;
-    color: #d9d21a;
-            
-    }
-h1{
-    text-align: center;
-    }
-div#d{
-
+input#submit{
+  width: 100px;
+  height: 40px;
+  color: #d9d21a;
+  background-color: #452947;
+  border-color: #613659;
+  border-radius: 3px;
 }
 
+div#titulo{
+  height: 180px;
+  box-sizing: border-box;
+}
+
+div#inputs{
+  padding: 0 38%;
+  display: block;
+  margin-top: 20px;
+}
+
+img.bola{
+  display: block;
+  margin: 0 auto;
+  animation: rotar 3s ease-in-out infinite alternate;
+}
+
+
+
 .glow {
+  margin: 20px auto;
   font-size: 80px;
   color: #d9d21a;
   text-align: center;
@@ -27,5 +44,13 @@ div#d{
   to {
     font-size: 85px;
     text-shadow: 0 0 20px #fff, 0 0 30px #fffa73, 0 0 40px #fffa73, 0 0 50px #fffa73, 0 0 60px #fffa73, 0 0 70px #fffa73, 0 0 80px #fffa73;
+  }
+}
+@keyframes rotar{
+  from{
+    transform: rotate(-5deg);
+  }
+  to{
+    transform: rotate(5deg);
   }
 }

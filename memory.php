@@ -3,57 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Memory - Portada</title>
+	<link rel="stylesheet" type="text/css" href="style/general.css">
+	<link rel="stylesheet" type="text/css" href="style/memory.css">
 	<style type="text/css">
-		body{
-			background-color: #211522;
-			color: #d9d21a;
-		}
-		img {
-			margin: 0 auto;
-			width: 35%;
-			border-radius: 5px;
-		}
-		button{
-			width: 100px;
-			height: 40px;
-			color: #d9d21a;
-			margin: 10px;
-			margin-top: 30px;
-			background-color: #452947;
-			border-color: #613659;
-			border-radius: 3px;
-		}
-		a {
-			text-decoration: none;
-			color: inherit;
-			
-		}
-		div#instrucciones{
-			border: 5px solid #613659;
-			border-radius: 5px;
-			padding: 15px;
-			width: 45%;
-			background-color: #452947;
-		}
-		h1.titulo{
-			margin: 3% auto 3%;
-		}
-		div.flexbox{
-			display: flex;
-			margin-top: 7px;
-		}
-		div.flexbox div{
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.titulo{
-			text-align: center;
-		}
+		
 
 	</style>
 </head>
 <body>
+<div class="nav">
+	<a href="memory.php"><button>Home</button></a>
+	<a href="halloffame.php"><button>Hall of Fame</button></a>
+</div>
 <h1 class="titulo">Memory Tarot</h1>
 <div class="flexbox">
 	<div id="instrucciones"><h2 class="titulo">Instrucciones</h2><ol>
@@ -70,9 +31,8 @@
 	<img src="fotoportada.jpeg" alt="foto de portada">
 </div>
 <div class="flexbox">
-	<div>
+	<div id="play">
 		<a href="juego.php"><button >Play</button></a>
-		<a  href="halloffame.php"><button>Hall of Fame</button></a>
 	</div>
 </div>
 </body>
