@@ -7,21 +7,32 @@
 </head>
 <body>
 	<?php
-		$ranking = explode("\n",(file_get_contents("HallOffame.txt")));
+		$ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
+		foreach ($ranking as $jugador) {
+				
+		}
 	?>
 	<div class="nav">
 		<a href="memory.php"><button>Home</button></a>
 		<a href="halloffame.php"><button>Hall of Fame</button></a>
 		<a href="juego.php"><button>Play</button></a>
 	</div>
-	<ol>
+	<h1>Hall Of Fame</h1>
+	<table>
+		<tr>
+			<th></th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
+		</tr>
 		<?php
-		var_dump($ranking)
-			foreach($ranking as $partida) {
-				$dades = explode(";",$partida);
-				echo"<li>".$dades[0].",".."</li>";
-			}	
+
+			foreach($ranking as $jugador){
+				$puesto++;
+				$datos = explode(";", $jugador);
+				echo"<tr>";
+				echo"<td>$puesto</td>";
+				foreach ($datos as $dato) {
+					echo"<td>$dato</td>";
+				}
+				echo"<tr>";
+			}
 		?>
-	</ol>
-</body>
 </html>
