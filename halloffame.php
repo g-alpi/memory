@@ -13,23 +13,6 @@
         <a href="juego.php"><button>Play</button></a>
     </div>
     <h1>Hall Of Fame</h1>
-    <table>
-        <tr>
-            <th>Puntos</th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
-        </tr>
-        <?php
-            $ranking = explode("\n",(file_get_contents("ranking.txt")));
-
-            foreach($ranking as $jugador){
-                $datos = explode(";", $jugador);
-                echo"<tr>";
-                foreach ($datos as $dato) {
-                    echo"<td>$dato</td>";
-                }
-                echo"<tr>";
-            }
-        ?>
-    </table>
             <?php 
         $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
 
@@ -72,9 +55,12 @@
         
             $datos=explode(";",$jugador);
             $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
-            echo $puntos;
-
-            $resultado=$resultado.$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3]."\n";
+            if(empty($resultado)){
+            	$resultado=$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3];
+            }
+            else{
+            	$resultado=$resultado."\n".$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3];
+            }
 
             file_put_contents("ranking.txt", $resultado);
             unlink("halloffame,txt");
@@ -82,6 +68,23 @@
 
         }
  ?>
+ <table>
+        <tr>
+            <th>Puntos</th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
+        </tr>
+        <?php
+            $ranking = explode("\n",(file_get_contents("ranking.txt")));
+
+            foreach($ranking as $jugador){
+                $datos = explode(";", $jugador);
+                echo"<tr>";
+                foreach ($datos as $dato) {
+                    echo"<td>$dato</td>";
+                }
+                echo"<tr>";
+            }
+        ?>
+    </table>
 
 
 
