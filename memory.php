@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Memory - Portada</title>
+  
 	<link rel="stylesheet" type="text/css" href="style/general.css">
 	<link rel="stylesheet" type="text/css" href="style/memory.css">
 	<style type="text/css">

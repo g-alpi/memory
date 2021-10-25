@@ -6,8 +6,8 @@ var parejas=0;
 
 function voltearCarta(id) {
 	
-	if (document.getElementById(id).name!='emparejada' || document.getElementById(id).name!='volteada') {
-		
+  
+	if (document.getElementById(id).name!='emparejada') {
 		contCartas++;
 		if (contCartas<=2) {
 			if(id.substring(0,id.length-1) == "thechariot"){
@@ -22,12 +22,10 @@ function voltearCarta(id) {
 			else if(id.substring(0,id.length-1) == "theTower"){
 				document.getElementById(id).src = "imagenes/theTower.jpeg";
 			}
-			
+		
 		}
 		cartasEmparejadas.push(id);
 			
-		
-
 		if (contCartas==2) {
 
 			compararCartas(cartasEmparejadas);
@@ -66,7 +64,6 @@ function girarCartas(){
 
 	for (var i = 0; i < cartasEmparejadas.length; i++) {
 		document.getElementById(cartasEmparejadas[i]).src = "imagenes/dorso_tarot.jpg";
-		document.getElementById(cartasEmparejadas[id])
 	}
 		
 }
@@ -85,6 +82,6 @@ function contarIntentos(){
 function comprobarVictoria(){
 
 	if (parejas==4) {
-		setTimeout(function(){location.replace("ganador.php?lvl="+0+"&tiempo="+0+"&intentos="+intentos);},2000)
+		setTimeout(function(){location.replace("ganador.php?lvl="+1+"&tiempo="+25+"&intentos="+intentos);},2000)
 	}
 }
