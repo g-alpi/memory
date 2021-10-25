@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title></title>
-	
+    <meta charset="utf-8">
+    <title>Memory - Hall of Fame</title>
+    <link rel="stylesheet" type="text/css" href="style/general.css">
 </head>
 <body>
-	
-
-<form method="post">
-	<input type="text" placeholder="Nombre" name="jugador">
-	<input type="submit" name="">
-	<?php
-			$contenido=file_get_contents("HallOfFame.txt");
-
-			$nivel=$_GET['lvl'];
-			$time=$_GET['tiempo'];
-			$intentos=$_GET['intentos'];
-			$jugador=$_POST['jugador'];
-
-			$contenido=$contenido.$jugador.";".$nivel.";".$time.";".$intentos."\n";
-
-			if (isset($jugador)) {
-
-				file_put_contents("HallOfFame.txt",$contenido );
-			}
-
-
     
-	?>
-	
-</form>
+    <div class="nav">
+        <a href="memory.php"><button>Home</button></a>
+        <a href="halloffame.php"><button>Hall of Fame</button></a>
+        <a href="juego.php"><button>Play</button></a>
+    </div>
+    <h1>Hall Of Fame</h1>
+    <table>
+        <tr>
+            <th>Puntos</th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
+        </tr>
+        <?php
+            $ranking = explode("\n",(file_get_contents("ranking.txt")));
 
- 
-<?php 
-$ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
+            foreach($ranking as $jugador){
+                $datos = explode(";", $jugador);
+                echo"<tr>";
+                foreach ($datos as $dato) {
+                    echo"<td>$dato</td>";
+                }
+                echo"<tr>";
+            }
+        ?>
+    </table>
+            <?php 
+        $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
 
         function algoritmo($lvl,$timepo,$intentos){
             if ($lvl==1) {
@@ -68,7 +65,7 @@ $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
 
 
 
-        $resultado=file_get_contents("ranking.txt");
+        
 
 
         foreach ($ranking as $jugador) {
@@ -80,6 +77,7 @@ $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
             $resultado=$resultado.$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3]."\n";
 
             file_put_contents("ranking.txt", $resultado);
+            unlink("halloffame,txt");
 
 
         }
@@ -87,5 +85,6 @@ $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
 
 
 
-</body>
+
 </html>
+﻿
