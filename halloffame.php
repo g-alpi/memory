@@ -9,7 +9,6 @@
     
     <div class="nav">
         <a href="memory.php"><button>Home</button></a>
-        <a href="halloffame.php"><button>Hall of Fame</button></a>
         <a href="juego.php"><button>Play</button></a>
     </div>
     <h1>Hall Of Fame</h1>
