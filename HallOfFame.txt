@@ -1,3 +1,6 @@
 alpi;1;25;6
-paco;1;25;6
-pedro;1;25;6
+paco;2;25;6
+pedro;3;25;6
+julian;4;25;6
+joseluis;3;45;10
+roberto;1;30;8
