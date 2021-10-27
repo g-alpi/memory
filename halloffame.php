@@ -13,8 +13,56 @@
         <a href="juego.php"><button>Play</button></a>
     </div>
     <h1>Hall Of Fame</h1>
-            <?php 
-        $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
+    
+        <?php
+
+            $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
+                    
+
+            $lista=[];
+
+            foreach($ranking as $jugador){
+                $datos = explode(";", $jugador);
+                $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
+
+                $lista2=['puntos'=>$puntos,'nombre'=>$datos[0],'lvl'=>$datos[1],'tiempo'=>$datos[2],'intentos'=>$datos[3]];
+                array_push($lista, $lista2);   
+
+            }
+
+            usort($lista, 'sort_by_orden');
+            function sort_by_orden ($a, $b) {
+                return $b['puntos'] - $a['puntos'];
+            }  
+
+        ?>
+    
+
+
+
+    <table>
+        <tr>
+            <th>Puntos</th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
+        </tr>
+        <?php 
+            foreach($lista as $jugador){
+               
+
+                echo "<tr>";
+                
+                foreach ($jugador as $key=>$dato) {
+                    
+                    echo"<td>$dato</td>";
+
+                }
+                echo"</tr>";
+
+            }
+         ?>
+    </table>
+
+<?php 
+        
 
         function algoritmo($lvl,$timepo,$intentos){
             if ($lvl==1) {
@@ -46,45 +94,10 @@
 
         }
 
-
-
         
 
 
-        foreach ($ranking as $jugador) {
-        
-            $datos=explode(";",$jugador);
-            $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
-            if(empty($resultado)){
-            	$resultado=$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3];
-            }
-            else{
-            	$resultado=$resultado."\n".$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3];
-            }
-
-            file_put_contents("ranking.txt", $resultado);
-            unlink("halloffame,txt");
-
-
-        }
  ?>
- <table>
-        <tr>
-            <th>Puntos</th><th>Nombre</th><th>Nivel</th><th>Tiempo</th><th>Intentos</th>
-        </tr>
-        <?php
-            $ranking = explode("\n",(file_get_contents("ranking.txt")));
-
-            foreach($ranking as $jugador){
-                $datos = explode(";", $jugador);
-                echo"<tr>";
-                foreach ($datos as $dato) {
-                    echo"<td>$dato</td>";
-                }
-                echo"<tr>";
-            }
-        ?>
-    </table>
 
 
 
