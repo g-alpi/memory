@@ -25,7 +25,9 @@
                 $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
 
                 $lista2=['puntos'=>$puntos,'nombre'=>$datos[0],'lvl'=>$datos[1],'tiempo'=>$datos[2],'intentos'=>$datos[3]];
-                array_push($lista, $lista2);   
+                if (isset($lista2['puntos'])) {
+                       array_push($lista, $lista2);
+                   }   
 
             }
 
