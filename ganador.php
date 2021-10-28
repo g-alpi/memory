@@ -93,7 +93,6 @@ $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
         
             $datos=explode(";",$jugador);
             $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
-            echo $puntos;
 
             $resultado=$resultado.$puntos.";".$datos[0].";".$datos[1].";".$datos[2].";".$datos[3]."\n";
 
