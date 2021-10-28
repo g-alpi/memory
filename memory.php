@@ -31,10 +31,32 @@
 	</div>
 	<img src="fotoportada.jpeg" alt="foto de portada">
 </div>
-<div class="flexbox">
-	<div id="play">
-		<a href="juego.php"><button >Play</button></a>
+<form method="post" action="juego.php">
+	<div class="flexbox">
+		<div id="niveles">
+			<input type="radio" id="4x2" name="nivel" value="1">
+			<label for="4x2">The Fool (4x2)</label>
+			<input type="radio" id="4x3" name="nivel" value="2">
+			<label for="4x3">The Hermit (4x3)</label><br>
+			<input type="radio" id="4x4" name="nivel" value="3">
+			<label for="4x4">The Stars (4x4)</label>
+			<input type="radio" id="5x4" name="nivel" value="4">
+			<label for="5x4">The Moon (5x4)</label><br>
+			<input type="radio" id="6x5" name="nivel" value="5">
+			<label for="6x5">The Sun (6x5)</label>
+			<input type="radio" id="8x5" name="nivel" value="6">
+			<label for="8x5">The Devil (8x5)</label>	
+		</div>
+		<div id="play">
+			<input type="submit" id="play"	 value="Play">
+		</div>
+		<div class="relleno">
+		</div>
 	</div>
+</form>
+	
+	
+
 </div>
 </body>
 </html>

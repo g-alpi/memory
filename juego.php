@@ -22,24 +22,56 @@
     <div id="flexbox">
 
         <?php 
-        
+        $nivel = $_POST['nivel'];
         $dorso='imagenes/dorso_tarot.jpg';
-      
-    	$cantidadFotos= [0,0,0,0];
+        $totalCartas=[8,12,16,20,30,40];
+        $cantidadCartas = [];
+        $fotos = ["themagician"=>0,
+"highpriestess"=>,
+"theempress"=>,
+"theemperor"=>,
+"thehierofant",
+"thelovers",
+"thechariot",
+"justice",
+"thehermit",
+"wheeloffortune",
+"strength",
+"thehangedman",
+"death",
+"thedevil",
+"temperance",
+"thetower",
+"thestar",
+"themoon",
+"thesun",
+"thejudgement",
+"theworld",
+"thefool",
+"joker",
+"jokerblack"];
 
 
+        for ($i=0; $i < $totalCartas[$nivel-1]/2; $i++) { 
+            array_push($cantidadCartas, 0);
+         }
+        echo $nivel;
+        var_dump($cantidadCartas);
     	$contador=0;
+    	$limite = 8;
     	
-    	
-    	while ($contador<8) {
-    		$random= rand(0,3);
-            if ($contador==0||$contador==4) {
+    	while ($contador<$totalCartas[$nivel-1]) {
+    		$random = rand(0,($totalCartas[$nivel-1]/2)-1);
+            //Cada 4 cartas salta de linea
+            if ($contador%4==0 && $contcol%2 == 0) {
                 echo "<div>";
+                $contcol++;
             }
-            if ($contador==4||$contador==8) {
-                echo"</div>";
+            else if ($contador%4==0 && $contcol%2 == 1) {
+                echo "</div>";
+                $contcol++;
             }
-
+            
     		if ($cantidadFotos[0]<2 && $random==0) {
                 $cantidadFotos[0]++;
     			echo "<img src='$dorso' alt='thechariot' id='thechariot".$cantidadFotos[0].

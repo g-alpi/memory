@@ -3,7 +3,7 @@ img {
 	width: 35%;
 	border-radius: 5px;
 }
-div#play button{
+div#play input{
 	width: 100px;
 	height: 40px;
 	color: #d9d21a;
@@ -25,9 +25,12 @@ h1.titulo{
 }
 div.flexbox{
 	display: flex;
-	margin-top: 7px;
+	margin-top: 12px;
 }
-div.flexbox div{
+div#niveles, div.flexbox div.relleno{
+	width: 25%;
+}
+div.flexbox div#play{
 	margin-left: auto;
 	margin-right: auto;
 }
