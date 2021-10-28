@@ -3,6 +3,10 @@ var cartasEmparejadas=[];
 var contCartas = 0;
 var intentos = 0;
 var parejas=0;
+var bandera=false;
+var totalCartas=[8,12,16,20,30,40]
+var tiempos=[60,90,110,140,190]
+
 
 function voltearCarta(id) {
 	
@@ -81,7 +85,35 @@ function contarIntentos(){
 
 function comprobarVictoria(){
 
-	if (parejas==4) {
-		setTimeout(function(){location.replace("ganador.php?lvl="+0+"&tiempo="+0+"&intentos="+intentos);},2000)
+	if (parejas==(totalCartas[dificultad-1]/2)) {
+		bandera=true;
+		setTimeout(function(){location.replace("ganador.php?lvl="+1+"&tiempo="+totalTime+"&intentos="+intentos);},2000)
+	}
+	
+}
+
+
+window.onload = updateClock;
+
+var totalTime = tiempos[dificultad-1];
+
+function updateClock() {
+	document.getElementById('countdown').innerHTML = "Tiempo: "+totalTime;
+	if(totalTime==0){
+		alert('Has perdido :c');
+		location.replace("memory.php");
+	}
+	else if(bandera==true){
+
+		return totalTime;
+	}
+	else{
+		totalTime-=1;
+		setTimeout("updateClock()",1000);
 	}
 }
+
+
+
+
+

@@ -26,7 +26,10 @@
                 $puntos=algoritmo($datos[1],$datos[2],$datos[3]);
 
                 $lista2=['puntos'=>$puntos,'nombre'=>$datos[0],'lvl'=>$datos[1],'tiempo'=>$datos[2],'intentos'=>$datos[3]];
-                array_push($lista, $lista2);   
+                
+                if (isset($puntos)) {
+                      array_push($lista, $lista2); 
+                  }  
 
             }
 
@@ -67,27 +70,32 @@
         function algoritmo($lvl,$timepo,$intentos){
             if ($lvl==1) {
                 $timepoMax=60;
-                $porcentajeTiempo=100-($timepo/$timepoMax)*100;
+                $tiempoJugado=$tiempoMax-$tiempo;
+                $porcentajeTiempo=100-($tiempoJugado/$timepoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.1-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==2){
                 $tiempoMax=90;
-                $porcentajeTiempo=100-($tiempo/$tiempoMax)*100;
+                $tiempoJugado=$tiempoMax-$tiempo;
+                $porcentajeTiempo=100-($tiempoJugado/$timepoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.2-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==3){
                 $tiempoMax=110;
-                $porcentajeTiempo=100-($tiempo/$tiempoMax)*100;
+                $tiempoJugado=$tiempoMax-$tiempo;
+                $porcentajeTiempo=100-($tiempoJugado/$timepoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.3-sqrt($porcentajeTiempo*$intentos));
             }
             else if($lvl==4){
-                $tiempoMax=140; 
-                $porcentajeTiempo=100-($tiempo/$tiempoMax)*100;
+                $tiempoMax=140;
+                $tiempoJugado=$tiempoMax-$tiempo;
+                $porcentajeTiempo=100-($tiempoJugado/$timepoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.4-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==5){
-                $tiempoMax=190; 
-                $porcentajeTiempo=100-($tiempo/$tiempoMax)*100;
+                $tiempoMax=190;
+                $tiempoJugado=$tiempoMax-$tiempo;
+                $porcentajeTiempo=100-($tiempoJugado/$timepoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.5-sqrt($porcentajeTiempo*$intentos));
             }
             return $puntuacion;

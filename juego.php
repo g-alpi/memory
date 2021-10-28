@@ -48,7 +48,7 @@
     <div id="flex">
         <div></div>
         <h1>Memory</h1>
-        <div><h3 id="contador">Intentos: 0</h3></div>
+        <div><h3 id="contador">Intentos: 0</h3><h3 id="countdown">Tiempo: 0</h3></div>
     </div>
     <div id="flexbox">
 
@@ -60,10 +60,12 @@
 
 
     	$contador=0;
+        $totalCartas=[8,12,16,20,30,40];
+        $dificultad=1; // cambiar while ($contador<$totalCartas[$dificultad-1])
     	
     	
     	while ($contador<8) {
-    		$random= rand(0,3);
+    		$random= rand(0,$totalCartas[$dificultad/2]);
             if ($contador==0||$contador==4) {
                 echo "<div>";
             }
@@ -101,7 +103,9 @@
       
 
         ?>
-        
+
+        <script type="text/javascript">var dificultad = "<?= $dificultad ?>";</script>
+        <script type="text/javascript" src="juego.js"></script>
         
         
     </div>
