@@ -25,6 +25,7 @@
 	</div>
 </form>	
 	<?php
+			error_reporting(0);
 			$contenido=file_get_contents("HallOfFame.txt");
 
 			$nivel=$_GET['lvl'];
