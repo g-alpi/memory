@@ -3,8 +3,11 @@ var cartasEmparejadas=[];
 var contCartas = 0;
 var intentos = 0;
 var parejas=0;
+
+
 function voltearCarta(id) {
 	
+
 	if (document.getElementById(id).name!='emparejada') {
 		contCartas++;
 		if (contCartas<=2) {
@@ -21,8 +24,8 @@ function voltearCarta(id) {
 				document.getElementById(id).src = "imagenes/theTower.jpeg";
 			}
 
+		
 		}
-			
 		cartasEmparejadas.push(id);
 
 		if (contCartas==2) {
@@ -81,6 +84,6 @@ function contarIntentos(){
 function comprobarVictoria(){
 
 	if (parejas==4) {
-		alert("Has ganado!!");
+		setTimeout(function(){location.replace("ganador.php?lvl="+1+"&tiempo="+25+"&intentos="+intentos);},2000)
 	}
 }

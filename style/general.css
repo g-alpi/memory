@@ -1,0 +1,35 @@
+body{
+	background-color: #211522;
+	color: #d9d21a;
+}
+h1{
+    text-align: center;
+    }
+div.nav {
+	background-color: #452947 ;
+	box-sizing: border-box;
+	width: 100%;
+	border-bottom: 3px solid #613659;;
+	}
+div.nav button{
+	width: 100px;
+	height: 40px;
+	color: #d9d21a;
+	margin: 10px;
+	background-color: #6c2670;
+	border-color: #613659;
+	border-radius: 3px;
+}
+table, td, th {
+	border: 3px solid #613659;
+
+}
+table{
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 40%;
+}
+td,th{
+	padding: 3px;
+	background-color: #452947;
+}
