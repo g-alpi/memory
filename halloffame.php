@@ -14,7 +14,7 @@
     <h1>Hall Of Fame</h1>
     
         <?php
-            error_reporting(0);
+            
 
             $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
                     
