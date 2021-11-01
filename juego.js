@@ -155,7 +155,7 @@ function updateClock() {
 	document.getElementById('countdown').innerHTML = "Tiempo: "+totalTime;
 	if(totalTime==0){
 		alert('Has perdido :c');
-		//location.replace("memory.php");
+		location.replace("memory.php");
 	}
 	else if(bandera==true){
 
