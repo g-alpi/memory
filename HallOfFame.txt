@@ -1,5 +1,0 @@
-EDUARDO;1;8;5
-ETORO;1;30;6
-EDUARDO;1;20;5
-Alpi;1;25;7
-Manolo;1;16;4

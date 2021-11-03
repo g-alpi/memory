@@ -3,10 +3,15 @@ var cartasEmparejadas=[];
 var contCartas = 0;
 var intentos = 0;
 var parejas=0;
+var bandera=false;
+var totalCartas=[8,12,16,20,30,40]
+var tiempos=[60,90,110,140,190,210]
+
+
 
 function voltearCarta(id) {
 	
-  
+
 	if (document.getElementById(id).name!='emparejada') {
 		contCartas++;
 		if (contCartas<=2) {
@@ -22,10 +27,66 @@ function voltearCarta(id) {
 			else if(id.substring(0,id.length-1) == "theTower"){
 				document.getElementById(id).src = "imagenes/theTower.jpeg";
 			}
-		
+
+			else if(id.substring(0,id.length-1) == "death"){
+				document.getElementById(id).src = "imagenes/death.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "strenght"){
+				document.getElementById(id).src = "imagenes/strength.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "temperance"){
+				document.getElementById(id).src = "imagenes/temperance.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thedevil"){
+				document.getElementById(id).src = "imagenes/thedevil.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "theemperor"){
+				document.getElementById(id).src = "imagenes/theemperor.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "theempress"){
+				document.getElementById(id).src = "imagenes/theempress.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thehangedman"){
+				document.getElementById(id).src = "imagenes/thehangedman.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thehierophant"){
+				document.getElementById(id).src = "imagenes/thehierophant.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thehighpriestess"){
+				document.getElementById(id).src = "imagenes/thehighpriestess.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thejudgement"){
+				document.getElementById(id).src = "imagenes/thejudgement.jpeg";
+			}
+			else if(id.substring(0,id.length-1) == "thejustice"){
+				document.getElementById(id).src = "imagenes/thejustice.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thelovers"){
+				document.getElementById(id).src = "imagenes/thelovers.jpeg";
+			}
+			else if(id.substring(0,id.length-1) == "themagician"){
+				document.getElementById(id).src = "imagenes/themagician.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "themoon"){
+				document.getElementById(id).src = "imagenes/themoon.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thestar"){
+				document.getElementById(id).src = "imagenes/thestar.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "thesun"){
+				document.getElementById(id).src = "imagenes/thesun.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "theworld"){
+				document.getElementById(id).src = "imagenes/theworld.jpg";
+			}
+			else if(id.substring(0,id.length-1) == "wheeloffortune"){
+				document.getElementById(id).src = "imagenes/wheeloffortune.jpg";
+			}
+
 		}
-		cartasEmparejadas.push(id);
 			
+		cartasEmparejadas.push(id);
+
 		if (contCartas==2) {
 
 			compararCartas(cartasEmparejadas);
@@ -81,7 +142,35 @@ function contarIntentos(){
 
 function comprobarVictoria(){
 
-	if (parejas==4) {
-		setTimeout(function(){location.replace("ganador.php?lvl="+1+"&tiempo="+25+"&intentos="+intentos);},2000)
+	if (parejas==(totalCartas[dificultad-1]/2)) {
+		bandera=true;
+		setTimeout(function(){location.replace("ganador.php?lvl="+1+"&tiempo="+totalTime+"&intentos="+intentos);},2000)
+	}
+	
+}
+
+
+window.onload = updateClock;
+
+var totalTime = tiempos[dificultad-1];
+
+function updateClock() {
+	document.getElementById('countdown').innerHTML = "Tiempo: "+totalTime;
+	if(totalTime==0){
+		alert('Has perdido :c');
+		location.replace("memory.php");
+	}
+	else if(bandera==true){
+
+		return totalTime;
+	}
+	else{
+		totalTime-=1;
+		setTimeout("updateClock()",1000);
 	}
 }
+
+
+
+
+
