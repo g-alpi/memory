@@ -8,8 +8,10 @@ var totalCartas=[8,12,16,20,30,40]
 var tiempos=[60,90,110,140,190,210]
 
 
+
 function voltearCarta(id) {
 	
+
 	if (document.getElementById(id).name!='emparejada') {
 		contCartas++;
 		if (contCartas<=2) {
@@ -25,6 +27,7 @@ function voltearCarta(id) {
 			else if(id.substring(0,id.length-1) == "theTower"){
 				document.getElementById(id).src = "imagenes/theTower.jpeg";
 			}
+
 			else if(id.substring(0,id.length-1) == "death"){
 				document.getElementById(id).src = "imagenes/death.jpg";
 			}
