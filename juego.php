@@ -57,12 +57,17 @@
     <div id="flexbox">
 
         <?php 
-        
-        $dorso='imagenes/dorso_tarot.jpg';
-      
-    	$cantidadFotos= [0,0,0,0,0,0];
+        $nivel = $_POST['nivel'];
+        $dorso='imagenes/dorso_tarot.jpg';      
+    	  $cantidadFotos= [0,0,0,0,0,0];
 
 
+
+        for ($i=0; $i < $totalCartas[$nivel-1]/2; $i++) { 
+            array_push($cantidadCartas, 0);
+         }
+        echo $nivel;
+        var_dump($cantidadCartas);
     	$contador=0;
         $totalCartas=[8,12,16,20,30,40];
         $dificultad=$_POST['nivel']; // cambiar while ($contador<$totalCartas[$dificultad-1])
@@ -96,6 +101,7 @@
                 }
 
             }
+
 
 
 

@@ -9,12 +9,12 @@
     
     <div class="nav">
         <a href="memory.php"><button>Home</button></a>
-        <a href="halloffame.php"><button>Hall of Fame</button></a>
         <a href="juego.php"><button>Play</button></a>
     </div>
     <h1>Hall Of Fame</h1>
     
         <?php
+            
 
             $ranking = explode("\n",(file_get_contents("HallOfFame.txt")));
                     
@@ -30,6 +30,7 @@
                 if (isset($puntos)) {
                       array_push($lista, $lista2); 
                   }  
+
 
             }
 
