@@ -3,55 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>Memory - Portada</title>
+  
+	<link rel="stylesheet" type="text/css" href="style/general.css">
+	<link rel="stylesheet" type="text/css" href="style/memory.css">
 	<style type="text/css">
-		body{
-			background-color: #211522;
-			color: #d9d21a;
-		}
-		img {
-			margin: 0 auto;
-			width: 35%;
-			border-radius: 5px;
-		}
-		button{
-			width: 100px;
-			height: 40px;
-			color: #d9d21a;
-			background-color: #452947;
-			border-color: #613659;
-			border-radius: 3px;
-		}
-		a {
-			text-decoration: none;
-			color: inherit;
-			margin-top: 4%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		div#instrucciones{
-			border: 5px solid #613659;
-			border-radius: 5px;
-			padding: 15px;
-			width: 45%;
-			background-color: #452947;
-			vertical-align: center;
-			display: flex;
-			flex-wrap: wrap;
-		}
-		h1.titulo{
-			margin: 3% auto 3%;
-		}
-		div.flexbox{
-			display: flex;
-		}
-		.titulo{
-			text-align: center;
-		}
-
+		
 
 	</style>
 </head>
 <body>
+<div class="nav">
+	<a href="memory.php"><button>Home</button></a>
+	<a href="halloffame.php"><button>Hall of Fame</button></a>
+</div>
 <h1 class="titulo">Memory Tarot</h1>
 <div class="flexbox">
 	<div id="instrucciones"><h2 class="titulo">Instrucciones</h2><ol>
@@ -67,8 +31,32 @@
 	</div>
 	<img src="fotoportada.jpeg" alt="foto de portada">
 </div>
-<div class="flexbox">
-	<a href="juego.php"><button>Play</button></a>
+<form method="post" action="juego.php">
+	<div class="flexbox">
+		<div id="niveles">
+			<input type="radio" id="4x2" name="nivel" value="1">
+			<label for="4x2">The Fool (4x2)</label>
+			<input type="radio" id="4x3" name="nivel" value="2">
+			<label for="4x3">The Hermit (4x3)</label><br>
+			<input type="radio" id="4x4" name="nivel" value="3">
+			<label for="4x4">The Stars (4x4)</label>
+			<input type="radio" id="5x4" name="nivel" value="4">
+			<label for="5x4">The Moon (5x4)</label><br>
+			<input type="radio" id="6x5" name="nivel" value="5">
+			<label for="6x5">The Sun (6x5)</label>
+			<input type="radio" id="8x5" name="nivel" value="6">
+			<label for="8x5">The Devil (8x5)</label>	
+		</div>
+		<div id="play">
+			<input type="submit" id="play"	 value="Play">
+		</div>
+		<div class="relleno">
+		</div>
+	</div>
+</form>
+	
+	
+
 </div>
 </body>
 </html>
