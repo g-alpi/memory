@@ -5,49 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory - Game</title>
-    <style>
-        body{
-            background-color: #211522;
-            color: #d9d21a;
-            
-        }
-        h1{
-            text-align: center;
-        }
-        div#flex{
-            display: flex;
-        }
-        div#flex div{
-            width: 45%;
-            content: ;
-        }
-        div#flexbox{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            border: solid black 5px;
-            width: 100%;
-            height: 80%;
-            
-        }
-        div#flexbox img {
-            border:3px solid #613659;
-            color: #452947;
-            border-radius: 10px;
-            width: 10%;
-            height: 90%;
-            margin: 3px;
-
-
-        }
-        h3#contador{
-            float: right;
-            padding-right: 10%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style/general.css">
+    <link rel="stylesheet" type="text/css" href="style/juego.css">
+    <?php
+        $dificultad = $_POST['nivel'];
+        echo"<link rel=\"stylesheet\" type=\"text/css\" href=\"style/juego".$dificultad.".css\">";
+    ?>
 </head>
 <body>
+	<div class="nav">
+	<a href="memory.php"><button>Home</button></a>
+	<a href="halloffame.php"><button>Hall of Fame</button></a>
+	</div>
 	<script type="text/javascript" src="juego.js"></script>
     <div id="flex">
         <div></div>
@@ -57,24 +26,23 @@
     <div id="flexbox">
 
         <?php 
-        $nivel = $_POST['nivel'];
         $dorso='imagenes/dorso_tarot.jpg';      
-    	  $cantidadFotos= [0,0,0,0,0,0];
+    	$cantidadFotos= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 
 
         for ($i=0; $i < $totalCartas[$nivel-1]/2; $i++) { 
             array_push($cantidadCartas, 0);
          }
-        echo $nivel;
-        var_dump($cantidadCartas);
     	$contador=0;
         $totalCartas=[8,12,16,20,30,40];
         $dificultad=$_POST['nivel']; // cambiar while ($contador<$totalCartas[$dificultad-1])
+        $totalParejas=$totalCartas[$dificultad-1];
+        $totalParejas=$totalParejas/2;
     	
     	
     	while ($contador<$totalCartas[$dificultad-1]) {
-    		$random= rand(0,$totalCartas[$dificultad/2]);
+    		$random= rand(0,$totalParejas - 1);
             
             if ($dificultad==1 ||$dificultad==2 ||$dificultad==3) {
                 if ($contador%4==0) {
@@ -97,7 +65,7 @@
             }
             elseif($dificultad==6){
                 if ($contador%8==0) {
-                    echo"<div style='height: 20%; width:50%'>";
+                    echo"<div style='height: 20%;'>";
                 }
 
             }
