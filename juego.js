@@ -5,7 +5,7 @@ var intentos = 0;
 var parejas=0;
 var bandera=false;
 var totalCartas=[8,12,16,20,30,40]
-var tiempos=[60,90,110,140,190,210]
+var tiempos=[60,90,150,190,230,320]
 
 
 

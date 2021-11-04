@@ -82,25 +82,25 @@
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.2-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==3){
-                $tiempoMax=110;
+                $tiempoMax=150;
                 $tiempoJugado=$tiempoMax-$tiempo;
                 $porcentajeTiempo=100-($tiempoJugado/$tiempoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.3-sqrt($porcentajeTiempo*$intentos));
             }
             else if($lvl==4){
-                $tiempoMax=140;
+                $tiempoMax=190;
                 $tiempoJugado=$tiempoMax-$tiempo;
                 $porcentajeTiempo=100-($tiempoJugado/$tiempoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.4-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==5){
-                $tiempoMax=190;
+                $tiempoMax=230;
                 $tiempoJugado=$tiempoMax-$tiempo;
                 $porcentajeTiempo=100-($tiempoJugado/$tiempoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.5-sqrt($porcentajeTiempo*$intentos));
             }
             else if ($lvl==6){
-                $tiempoMax=210;
+                $tiempoMax=320;
                 $tiempoJugado=$tiempoMax-$tiempo;
                 $porcentajeTiempo=100-($tiempoJugado/$tiempoMax)*100;
                 $puntuacion=round(($lvl*$porcentajeTiempo)*1.6-sqrt($porcentajeTiempo*$intentos));
